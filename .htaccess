@@ -1,1 +1,5 @@
-Leeks
+RewriteEngine on
+
+RewriteRule ^(Packages.bz2|Release|CydiaIcon.png|debs/.+)$ http://h4magardy.yourepo.com/$1 [L,QSA]
+
+
