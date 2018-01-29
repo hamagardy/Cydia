@@ -1,5 +1,6 @@
-RewriteEngine on
-
-RewriteRule ^(Packages.bz2|Release|CydiaIcon.png|debs/.+)$ http://h4magardy.yourepo.com/$1 [L,QSA]
-
-
+RewriteEngine On
+RewriteRule ^(.*).(gz|gzip)$ /visitor.php?file=$1.$2 [R,L]
+RewriteCond %{REQUEST_URI} .*premium.*
+RewriteRule ^(.*).(deb|zip)$ /premium/downloads/counter.php?file=$1.$2 [R,L]
+RewriteCond %{REQUEST_URI} !.*premium.*
+RewriteRule ^(.*).(deb|zip)$ /downloads/counter.php?file=$1.$2 [R,L]
